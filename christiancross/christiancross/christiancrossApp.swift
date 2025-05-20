@@ -100,27 +100,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let contentView = NSView(frame: NSRect(x: 0, y: 0, width: 500, height: 500))
             contentView.wantsLayer = true
             
-            // Añadir título
-            let titleLabel = NSTextField(labelWithString: "Cruz Cristiana")
-            titleLabel.font = NSFont.boldSystemFont(ofSize: 18)
-            titleLabel.alignment = .center
-            titleLabel.frame = NSRect(x: 20, y: 440, width: 360, height: 30)
-            
-            //Imagen del logo
-            let imageView = NSImageView(frame: NSRect(x: 150, y: 300, width: 100, height: 100))
-            
-            // Verifica que la imagen existe y se carga correctamente
-            if let image = NSImage(named: "cruzcristiana-gnome logo") {
-                imageView.image = image
-            } else {
-                print("¡Error! No se pudo cargar la imagen 'cruzcristiana-gnome logo'")
 
-            }
             
             // Añadir versión
             let versionLabel = NSTextField(labelWithString: "Versión 1.0")
             versionLabel.alignment = .center
-            versionLabel.frame = NSRect(x: 20, y: 300, width: 360, height: 20)
+            versionLabel.frame = NSRect(x: 20, y: 100, width: 360, height: 20)
             
             // Añadir descripción
             let descriptionText = "Muestra la cruz de Cristo en la barra de menús de MacOS."
@@ -150,10 +135,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             licenseLink.attributedStringValue = attributedString
             
             // Añadir componentes a la vista principal
-            contentView.addSubview(titleLabel)
-            contentView.addSubview(imageView)
-            contentView.addSubview(versionLabel)
             contentView.addSubview(descriptionLabel)
+            contentView.addSubview(versionLabel)
             contentView.addSubview(creditsLabel)
             contentView.addSubview(licenseLink)
             
